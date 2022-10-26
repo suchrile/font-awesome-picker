@@ -6,7 +6,7 @@ let iconsList
 
 async function getIcons(filter) {
   loader.style.display = 'flex'
-  const icons = await fetch(`../public/icons/${filter}.json`)
+  const icons = await fetch(`icons/${filter}.json`)
     .then(results => results.json())
   iconsList = Object.keys(icons).map(name => {
     return { name, html: icons[name] }
