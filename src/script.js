@@ -29,7 +29,7 @@ function changeFilter(event) {
 }
 
 function inputHandler(event) {
-  const value = event.target.value.trim()
+  const value = event.target.value.trim().toLowerCase()
   if (searchValue === value) return
   searchValue = value
   renderIcons()
