@@ -1,0 +1,209 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.head {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+h1 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  position: relative;
+}
+
+.search input {
+  flex: 1 1 auto;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 18px;
+  border: none;
+  box-shadow: none;
+  border-bottom: 2px solid lightseagreen;
+  border-radius: 0;
+  outline: none;
+  padding-left: 40px;
+  padding-right: 15px;
+}
+
+.search svg {
+  height: 18px;
+  left: 10px;
+  position: absolute;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  text-align: center;
+  margin-top: 30px;
+  pointer-events: none;
+}
+
+.filters div {
+  padding: 8px 20px;
+  border-radius: 18px;
+  border: 1px solid lightseagreen;
+  cursor: pointer;
+  pointer-events: all;
+  transition: all 0.3s ease;
+}
+
+.filters div:hover,
+.filters div.active {
+  background-color: lightseagreen;
+  color: #FFFFFF;
+}
+
+.icons-wrapper {
+  min-height: calc(100vh - 238px);
+  background-color: #F0F1F3;
+  position: relative;
+}
+
+.layout-message {
+  top: 80px;
+  left: 50%;
+  font-size: 24px;
+  line-height: 1;
+  white-space: nowrap;
+  text-align: center;
+  transform: translateX(-50%);
+  position: absolute;
+}
+
+.icons-layout {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 109px);
+  max-width: 1473px;
+  padding: 50px 100px;
+  margin: 0 auto;
+  gap: 15px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  transition: all .3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.icon-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.icon-image:active {
+  background-color: lightseagreen;
+}
+
+.icon-image svg {
+  height: 60px;
+  pointer-events: none;
+}
+
+.icon-name {
+  padding: 8px 10px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: #fff;
+  background-color: lightseagreen;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.icon-name:active {
+  background-color: white;
+}
+
+.lds-dual-ring {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.lds-dual-ring:before {
+  content: " ";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  margin-right: 12px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: lightseagreen transparent lightseagreen transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .head {
+      padding-top: 50px;
+      padding-bottom: 40px;
+  }
+
+  .search {
+      max-width: 100%;
+      padding: 0 20px;
+      margin-top: 40px;
+  }
+
+  .search input {
+      flex: 1 0 auto;
+  }
+
+  .search svg {
+      left: 30px;
+  }
+
+  .filters {
+      padding: 0 20px;
+      margin-top: 40px;
+  }
+
+  .icons-layout {
+      padding: 30px 20px;
+  }
+}

@@ -1,7 +1,7 @@
 <?php
 
 $arr = array();
-$somePath = '/Applications/MAMP/htdocs/search-icons/svgs';
+$somePath = '/Applications/MAMP/htdocs/iconspicker/src/svgs';
 $dirs = glob($somePath . '/*', GLOB_ONLYDIR);
 
 $id = 1;
