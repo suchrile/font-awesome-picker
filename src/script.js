@@ -20,12 +20,12 @@ getIcons('brands')
 filters.addEventListener('click', changeFilter)
 search.addEventListener('input', inputHandler)
 
-function changeFilter(event) {
+async function changeFilter(event) {
   const target = event.target
   if (target.classList.contains('active')) return
   filters.querySelectorAll('div').forEach(elem => elem.classList.remove('active'))
   target.classList.add('active')
-  getIcons(target.dataset.filter)
+  await getIcons(target.dataset.filter)
 }
 
 function inputHandler(event) {
@@ -35,7 +35,7 @@ function inputHandler(event) {
   renderIcons()
 }
 
-function serachIcons() {
+function searchIcons() {
   return iconsList.filter(el => el.name.indexOf(searchValue) > -1)
 }
 
@@ -44,7 +44,7 @@ function renderIcons() {
   iconsLayout.removeEventListener('click', copy)
   iconsLayout.innerHTML = ''
 
-  const list = serachIcons()
+  const list = searchIcons()
 
   if (list.length) {
     list.forEach(icon => {
@@ -52,8 +52,8 @@ function renderIcons() {
         'beforeend',
         `
           <div class="icon">
-          <div class="icon-image">${icon.html}</div>
-          <div class="icon-name">${icon.name}</div>
+            <div class="icon-image">${icon.html}</div>
+            <div class="icon-name">${icon.name}</div>
           </div>
         `
       )
@@ -72,10 +72,10 @@ function renderIcons() {
   loader.style.display = 'none'
 }
 
-function copy(e) {
+async function copy(e) {
   if (e.target.classList.contains('icon-image')) {
-    navigator.clipboard.writeText(e.target.innerHTML)
+    await navigator.clipboard.writeText(e.target.innerHTML)
   } else if (e.target.classList.contains('icon-name')) {
-    navigator.clipboard.writeText(e.target.innerText)
+    await navigator.clipboard.writeText(e.target.innerText)
   }
 }
